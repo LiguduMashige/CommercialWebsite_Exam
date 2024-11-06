@@ -4,13 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <!--<link rel="stylesheet" href="css/sections.css">-->
 </head>
 <body>
-    <div id="header">
+    <!--<div id="header">
         <nav id="navbar"></nav>
+    </div>-->
+    <div id="header">
+        <nav id="navbar">
+            <button id="hamburger" aria-label="Toggle navigation">☰</button>
+            <!-- The navList will be appended here by JavaScript -->
+        </nav>
+    </div>
+
+    <div class="section" id="section1">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 1">
+        <p>This is the content for Section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="section" id="section2">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 2">
+        <p>This is the content for Section 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="section" id="section3">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 3">
+        <p>This is the content for Section 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="section" id="section4">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 4">
+        <p>This is the content for Section 4. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
 
     <script src="scripts/app.js"></script>
+    <script src="scripts/reveal.js"></script>
 </body>
 </html>

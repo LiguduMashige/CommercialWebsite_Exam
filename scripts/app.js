@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => { 
     const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    /*const hamburger = document.getElementById('hamburger');*/
 
     // Define the base path dynamically depending on whether we're on GitHub Pages or not
     const base = window.location.pathname.includes('CommercialWebsite_Exam') ? '/CommercialWebsite_Exam/' : '/';
@@ -8,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pages = [
         { name: 'Home', link: `${base}index.html` },
         { name: 'About', link: `${base}pages/about.html` },
-        { name: 'Essays', link: `${base}pages/essays.html` },
         { name: 'Contact', link: `${base}pages/contact.html` },
         { name: 'Design', link: `${base}pages/design.html` },
         { name: 'Visuals', link: `${base}pages/visuals.html`}
