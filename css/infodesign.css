@@ -9,3 +9,20 @@
     border: rgb(243, 243, 243) solid 3px;
     border-radius: 0.5rem;
 }
+.bibliography {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.bibliography h3 {
+    text-align: center;
+}
+
+.bibliography ul {
+    list-style-type: none;
+    color:#000000;
+}
+
+.bibliography ul li {
+    margin-bottom: 10px;
+}

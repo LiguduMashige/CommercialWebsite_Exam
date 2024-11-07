@@ -1,0 +1,67 @@
+.socials{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: start;
+    padding-left: 2rem;
+}
+
+.button{
+    font-weight: bold;
+    font-size: 1.5rem;
+    animation: background-pan 20s linear infinite forwards;
+    background: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+    );
+    background-size: 300%;
+    background-clip: text;
+    color: transparent;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    align-content: center;
+    text-decoration: none;
+    transition: color 1000ms ease;
+    position: relative;
+    width: fit-content;
+}
+.button:hover{
+    color: white; 
+}
+
+.button::after{
+    z-index: -1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    mask-image: linear-gradient(to right, black, transparent);
+    background: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+        );
+    background-size: 300%;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 100%;
+    left: -5px;
+    opacity: 0;
+    transition: opacity 1000ms ease,
+                width 2000ms ease;
+    animation: background-pan 20s linear infinite forwards;
+}
+.button:hover::after{
+    opacity: 1;
+    width: 1000%;
+}
+
+@keyframes background-pan {
+    50%{
+        background-position: -300%;
+    }
+}

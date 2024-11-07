@@ -6,6 +6,14 @@
     align-items: flex-start;
 }
 
+.statsContainer{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
 @media (max-width: 700px){
     .contentContainer{
         padding-left: var(--padding-med);
@@ -16,6 +24,13 @@
     .contentContainer{
         padding-left: var(--padding-small);
         padding-right: var(--padding-small);
+    }
+}
+
+@media (max-width: 450px){
+    .statsContainer{
+        padding: var(--padding-small);
+        margin: 0%;
     }
 }
 
@@ -252,4 +267,92 @@ button{
 button:hover{
     background-color: rgb(243, 243, 243);
     color: black;
+}
+.game-display{
+    display: flex;
+    border: var(--light-grey) solid 3px;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#reverse{
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 700px){
+    .game-display{
+        flex-direction: column;
+        margin: var(--padding-med);
+        padding: var(--padding-med);
+    }
+    #reverse{
+        flex-direction: column;
+    }
+}
+@media (max-width: 450px){
+    .game-display{
+        margin: var(--padding-small);
+        padding: var(--padding-small);
+    }
+}
+
+.game-image{
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.game-image img{
+    border-radius: 1rem;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin: 1rem;
+}
+
+@media (max-width: 700px) {
+    .info-section{
+        margin: var(--padding-med);
+    }
+}
+@media (max-width: 450px) {
+    .info-section{
+        margin: var(--padding-small);
+    }
+}
+@media (max-width: 450px){
+    .p-summary{
+        font-size: var(--fs-normal-small);
+    }
+
+    .e-content h3{
+        font-size: var(--fs-subheading-small);
+    }
+    .e-content p{
+        font-size: var(--fs-normal-small);
+    }
+    .e-content ul li{
+        font-size: var(--fs-normal-small);
+    }
+    .e-content ol li{
+        font-size: var(--fs-normal-small);
+    }
+
 }
