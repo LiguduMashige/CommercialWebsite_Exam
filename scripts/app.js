@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => { 
     const navbar = document.getElementById('navbar');
-    const hamburger = document.getElementById('hamburger');
     /*const hamburger = document.getElementById('hamburger');*/
 
     // Define the base path dynamically depending on whether we're on GitHub Pages or not

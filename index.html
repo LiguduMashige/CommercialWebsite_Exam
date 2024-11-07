@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="css/sections.css">
-    <!--<link rel="stylesheet" href="css/sections.css">-->
+    <link rel= "stylesheet" href="css/navbar.css">
+    <link rel= "stylesheet" href="css/homepage.css">
+    <link rel= "stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700&display=swap">
+    <link rel= "stylesheet" href= "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script type="module" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 <body>
-    <!--<div id="header">
-        <nav id="navbar"></nav>
-    </div>-->
     <div id="header">
-        <nav id="navbar">
-            <button id="hamburger" aria-label="Toggle navigation">☰</button>
-            <!-- The navList will be appended here by JavaScript -->
-        </nav>
+        <nav id="navbar"></nav>
     </div>
+    <main>
+        <div id="hero-banner">
+            <img class="background-image left" src="images/Di-Marco-PNG-Inter-Milan-Football-Render.png" alt="Left Image">
+            <img class="background-image right" src="images/thuram.png" alt="Right Image">
+            <div id="hero-subheading">
+                <span id="text-scroll">Internazionale Milan</span>
+            </div>
+            <div id="hero-title">
+                <h1>
+                    This is 
+                    <span class="coolFont">Inter Milan</span>
+                </h1>
+            </div>
+            <div id="hero-subheading">
+                <p>
+                    Forza <span class="coolFont">Inter!</span>
+                </p>
+            </div>
+        </div>
+    </main>
 
     <div class="section" id="section1">
         <img src="https://via.placeholder.com/300" alt="Placeholder Image 1">
@@ -37,5 +54,6 @@
 
     <script src="scripts/app.js"></script>
     <script src="scripts/reveal.js"></script>
+    <script src="scripts/text-scroll.js"></script>
 </body>
 </html>

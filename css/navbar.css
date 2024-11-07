@@ -1,37 +1,204 @@
-* {
+:root {
+    --light-grey: rgb(243, 243, 243);
+    --border-width: 3px;
+    --blue-gradient: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+    );
+    --black-gradient: linear-gradient(
+        90deg,
+        transparent,
+        black 7.5%,
+        transparent
+    );
+
+    --fs-title-med: 4rem;
+    --fs-subheading-med: 1.25rem;
+    --fs-normal-med: 0.85rem;
+
+    --fs-title-small: 3rem;
+    --fs-subheading-small: 1rem;
+    --fs-normal-small: 0.75rem;
+
+    --padding-med: 0.7rem;
+    --padding-small: 0.5rem;
+}
+
+html {
+    font-family: 'Satoshi', sans-serif;
+    scroll-behavior: smooth;
+    background-color: rgb(255, 255, 255); /*243, 246, 249 */
+}
+
+body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
 }
 
-body {
-    background: rgb(241, 239, 239);
-    color: #f5f5f5;
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: var(--light-grey) solid var(--border-width);
 }
 
-.container{
-    padding: 10px 10%;
-
+@media (max-width: 450px) {
+    header {
+        padding: 0 1rem;
+    }
 }
 
-body {
+main {
+    padding: 0 1.5rem; 
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 0 var(--padding-med);
+    }
+}
+
+@media (max-width: 450px) {
+    main {
+        padding: 0 var(--padding-small);
+    }
+}
+
+h1 {
+    color: black;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-size: 5rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
+.coolFont {
+    animation: background-pan 20s linear infinite forwards;
+    background: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+    ) 300% text;
+    background-size: 300%;
+    background-clip: text;
+    color: transparent;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+    text-decoration: white;
+}
+
+nav {
+    overflow: hidden;
+    padding: 10px 3%;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    max-height: 60px;
+    margin-left: auto; /* Push logo to the far right */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the nav items to the right */
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    display: inline-block;
+    color: black; /* Change text color to black */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none; /* Remove underlines */
+    font-size: 18px;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the links */
+nav a:hover {
+    color: rgb(26, 26, 237); /* Change text color to blue on hover */
+    transform: scale(1.2);
+}
+
+nav a::after{
+    content: '';                      /* Create a pseudo-element */
+    display: block;                  /* Make it a block element */
+    width: 0;                        /* Start with a width of 0 */
+    height: 2px;                     /* Height of the underline */
+    background: #496a82;            /* Color of the underline */
+    transition: width 0.3s ease;    /* Smooth width transition */
+    position: absolute;              /* Position it absolutely */
+    left: 50%;                       /* Center it horizontally */
+    bottom: 0;                       /* Position it at the bottom */
+    transform: translateX(-50%);    /* Center it */
+    text-decoration-color: rgb(52, 152, 210);
+}
+
+/* Active/current page link styling */
+nav a.active {
+    color: rgb(30, 122, 167); /* Keep active link text color black */
+}
+
+/* Styling for smaller screens (responsive) */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-end;
+        position: sticky;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the links vertically */
+        text-align: right; /* Align the links to the right */
+        justify-content: flex-end;
+        display: flex;
+    }
+
+    nav li {
+        margin: 10px 0; /* Adjust margin for vertical alignment */
+    }
+
+    nav a {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Add space between logo and nav on small screens */
+    }
+}
 .section {
     height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     align-items: center;
     justify-content: center;
-    font-size: 2em; /* Base font size */
+    font-size: 1.5em;
     opacity: 0; /* Initially hidden */
     transform: translateY(50px); /* Move down slightly */
     transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for the reveal effect */
-    padding: 20px; /* Add padding for small screens */
-    box-sizing: border-box; /* Include padding in width/height calculations */
 }
 
 .section.visible {
@@ -45,100 +212,185 @@ img {
     margin-bottom: 20px; /* Space between image and text */
 }
 
-/* Responsive Font Sizes */
-@media (max-width: 768px) {
-    .section {
-        font-size: 1.5em; /* Smaller font size for tablets */
+#section1 { background-color: rgb(255, 255, 255); }
+#section2 { background-color: rgb(255, 255, 255); }
+#section3 { background-color: rgb(255, 255, 255); }
+#section4 { background-color: rgb(255, 255, 255); }
+
+#activePage{
+    position: relative;
+}
+#activePage::after{
+    background-color: black;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: -1px;
+    content: "";
+    opacity: 1;
+}
+
+.titles{
+    display: flex;
+    flex-direction: column;
+    margin: 75px 0%;
+}
+.headerContainer{
+    display: flex;
+    padding-left: 2rem;
+}
+.headerContainer h1{
+    display: flex;
+}
+.subheaderContainer{
+    width: fit-content;
+    padding-left: 2rem;
+}
+.subheaderContainer p{
+    color: black;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:  typing 1.5s;
+}
+
+@media (max-width: 700px){
+    .headerContainer h1{
+        font-size: var(--fs-title-med);
+    }
+    .subheaderContainer p{
+        font-size: var(--fs-subheading-med);
+    }
+}
+@media (max-width: 450px){
+    .headerContainer h1{
+        font-size: var(--fs-title-small);
+    }
+    .subheaderContainer p{
+        font-size: var(--fs-subheading-small);
     }
 }
 
-@media (max-width: 480px) {
-    .section {
-        font-size: 1.2em; /* Even smaller font size for mobile */
-        padding: 10px; /* Less padding for mobile */
-    }
+.contact-button{
+    border: 0;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    color: white;
+    background: var(--blue-gradient);
+    background-size: 300%;
+    border-radius: 1rem;
+    animation: background-pan 20s linear infinite forwards;
 }
 
+.card{
+    border-radius: 0.5rem;
+    border-color: rgb(243, 243, 243);
+    border-style: solid;
+    border-width: 3px;
+    margin: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+.card::after{
+    border-radius: 25%;
+    background: linear-gradient(
+    90deg,
+    transparent,
+    black 7.5%,
+    transparent
+    );
+    width: 25%;
+    height: 3px;
+    position: absolute;
+    bottom: -3px;
+    left: 0%;
+    opacity: 0;
+    content: "";
+    transition: opacity 1000ms ease,
+                width 2000ms ease;
 
-nav {
-    background-color: rgb(38, 36, 36);  /* Dark background for the nav bar */
-    overflow: hidden;                   /* Ensure proper layout for floating elements */
-    padding: 10px 3%;                   /* Some padding for spacing */
-    white-space: nowrap;                /* Prevent wrapping of links to new lines */
-    display: flex;                      /* Use Flexbox for positioning */
-    justify-content: space-between;     /* Space between hamburger and nav items */
-    align-items: center;                /* Vertically center logo and nav items */
-    position: sticky;
-    top: 0;                             /* It will stick at the top of the page */
-    z-index: 1000;                     /* Ensure it stays on top of other content */
+}
+.card:hover::after{
+    opacity: 1;
+    width: 100%;
+}
+.card:hover{
+    cursor: pointer;
+}
+a:hover{
+    cursor: pointer;
 }
 
-nav ul {
-    list-style: none;                /* Remove default list styles */
-    margin: 0;
-    padding: 0;
-    display: flex;                   /* Display list items in a row */
-    justify-content: flex-end;       /* Align the nav items to the right */
+.icons{
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
 }
 
-nav li {
-    margin: 0 10px;                 /* Add space between each list item */
+#check{
+    display: none;
 }
 
-nav a {
-    display: inline-block;           /* Makes the links behave like buttons */
-    color: rgb(255, 255, 255);      /* White text color */
-    text-align: center;              /* Center text within the links */
-    padding: 14px 20px;              /* Padding around each link */
-    text-decoration: none;           /* Remove underlines */
-    font-size: 18px;                 /* Adjust font size */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-    position: relative;              /* Position relative for the pseudo-element */
-}
-
-/* Hover effect for the links */
-nav a:hover {
-    background-color: transparent;   /* No background change on hover */
-    color: rgb(233, 233, 233);       /* Change text color on hover */
-    transform: scale(1.1);           /* Slightly increase the size */
-}
-
-/* Adding an underline effect */
-nav a::after {
-    content: '';                      /* Create a pseudo-element */
-    display: block;                  /* Make it a block element */
-    width: 0;                        /* Start with a width of 0 */
-    height: 2px;                     /* Height of the underline */
-    background: #496a82;            /* Color of the underline */
-    transition: width 0.3s ease;    /* Smooth width transition */
-    position: absolute;              /* Position it absolutely */
-    left: 50%;                       /* Center it horizontally */
-    bottom: 0;                       /* Position it at the bottom */
-    transform: translateX(-50%);    /* Center it */
-}
-
-/* Show underline on hover */
-nav a:hover::after {
-    width: 100%;                     /* Full width on hover */
-}
-
-/* Styling for smaller screens (responsive) */
-@media (max-width: 600px) {
-    nav {
+@media (max-width: 700px){
+    header nav{
+        position: absolute;
+        display: none;
         flex-direction: column;
-        align-items: flex-end;      /* Align items to the right on small screens */
+        justify-content: space-around;
+        align-items: center;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background-color: rgb(243, 243, 243, 1);
+        z-index: 1;
     }
 
-    nav ul {
-        flex-direction: column;     /* Stack the links vertically */
-        text-align: right;          /* Align the links to the right */
+    header .active{
+        display: flex;
     }
 
-    nav li {
-        margin: 10px 0;            /* Adjust margin for vertical alignment */
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1.5rem;
     }
 
-    nav a {
-        padding: 10px;             /* Adjust padding for smaller screens */
+    .icons{
+        display: inline-flex;
+    }
+    
+    .contact-button{
+        position: absolute;
+        right: 80px;
+    }
+}
+
+@media (max-width: 450px){
+    .contact-button{
+        position: absolute;
+        right: 55px;
+    }
+
+}
+
+@keyframes cursor {
+    50%{
+        border-color: transparent;
+    }
+}
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
+@keyframes background-pan {
+    50%{
+        background-position: -300%;
     }
 }

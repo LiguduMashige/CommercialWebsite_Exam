@@ -1,0 +1,33 @@
+.cards{
+    gap: 1rem;
+    display: flex;
+}
+
+@media (max-width: 700px){
+    .cards{
+        flex-direction: column;
+    }
+}
+
+
+.wireframeCard{
+    display: flex;
+    flex-direction: column;
+    border: rgb(243, 243, 243) solid 3px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.wireframeImage{
+    object-fit: cover;
+    width: 100%;
+    border: rgb(243, 243, 243) solid 3px;
+    border-radius: 0.5rem;
+}
+
+@keyframes scroll{
+    to{
+        transform: translateX(calc(-100% - 1rem));
+    }
+}

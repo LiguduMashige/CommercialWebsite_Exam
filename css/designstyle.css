@@ -1,0 +1,255 @@
+.contentContainer{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+@media (max-width: 700px){
+    .contentContainer{
+        padding-left: var(--padding-med);
+        padding-right: var(--padding-med);
+    }
+}
+@media (max-width: 450px){
+    .contentContainer{
+        padding-left: var(--padding-small);
+        padding-right: var(--padding-small);
+    }
+}
+
+.articleContainer{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+aside{
+    padding-right: 2rem;
+    border-radius: 0.5rem;
+    border-color: rgb(243, 243, 243);
+    border-style: solid;
+    border-width: 3px;
+    position: sticky;
+    top: 2rem;
+}
+
+@media (max-width: 700px){
+    aside{
+        display: none;
+    }
+    .articleContainer{
+        padding-left: 0%;
+    }
+}
+
+aside nav{
+    width: 155px;
+}
+
+aside nav ul{
+    list-style: none;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding: 1rem
+}
+
+aside nav ul li{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position:relative;
+}
+
+aside nav ul li a{
+    width: 100%;
+    margin-right: 0%;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: black;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    align-content: center;
+    text-decoration: none;
+    transition: color 500ms ease;
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+aside nav ul li a:hover{
+    color: white;
+}
+aside nav ul li::after{
+    z-index: -1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    mask-image: linear-gradient(to right, black , black, rgba(0, 0, 0, 0.477), transparent);
+    background: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+        );
+    background-size: 300%;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 75%;
+    bottom: 12.5%;
+    left: -5px;
+    opacity: 0;
+    transition: opacity 1000ms ease,
+                width 2000ms ease;
+    animation: background-pan 20s linear infinite forwards;
+}
+aside nav ul li:hover::after{
+    opacity: 1;
+    width: 100%;
+}
+
+article{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-color: rgb(243, 243, 243);
+    border-style: solid;
+    border-width: 3px;
+    position: relative;
+}
+article::after{
+    border-radius: 25%;
+    background: linear-gradient(
+    90deg,
+    transparent,
+    black 7.5%,
+    transparent
+    );
+    width: 25%;
+    height: 3px;
+    position: absolute;
+    bottom: -3px;
+    left: 0%;
+    opacity: 0;
+    content: "";
+    transition: opacity 1000ms ease,
+                width 2000ms ease;
+}
+article:hover::after{
+    opacity: 1;
+    width: 100%;
+}
+
+article a{
+    text-decoration: none;
+}
+
+article a h2{
+    margin-right: 0%;
+    font-weight: bold;
+    font-size: 2rem;
+    animation: background-pan 20s linear infinite forwards;
+    background: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+    );
+    background-size: 300%;
+    background-clip: text;
+    color: transparent;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    align-content: center;
+    text-decoration: none;
+    transition: color 500ms ease;
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+article a h2:hover{
+    color: white;
+}
+
+article a h2::after{
+    z-index: -1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    mask-image: linear-gradient(to right, black , black, rgba(0, 0, 0, 0.477), transparent);
+    background: linear-gradient(
+        to right,
+        rgb(26, 26, 237),
+        rgb(113, 188, 254),
+        rgb(24, 146, 247),
+        rgb(26, 26, 237)
+        );
+    background-size: 300%;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 75%;
+    bottom: 12.5%;
+    left: -5px;
+    opacity: 0;
+    transition: opacity 1000ms ease,
+                width 2000ms ease;
+    animation: background-pan 20s linear infinite forwards;
+}
+article h2:hover::after{
+    opacity: 1;
+    width: 100%;
+}
+
+article nav{
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
+    border-color: rgb(243, 243, 243);
+    border-style: solid;
+    border-width: 3px;
+    transition: background-color 1000ms ease;
+    background-color: white;
+}
+article nav:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+article nav a{
+    color: black;  
+}
+
+h3{
+    margin-top: 2.5rem;
+    text-decoration: black wavy underline;
+}
+
+tbody{
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+th{
+    border: solid black;
+    margin: 0%;
+}
+td{
+    border: solid black;
+    margin: 0%;
+}
+
+
+button{
+    text-align: start;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 3px;
+    transition: background-color 1000ms ease;
+    color: white;
+    background-color: black;
+}
+button:hover{
+    background-color: rgb(243, 243, 243);
+    color: black;
+}
