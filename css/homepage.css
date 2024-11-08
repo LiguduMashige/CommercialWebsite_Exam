@@ -26,7 +26,7 @@
 
 .background-image.right {
     right: -5%; /* Shift slightly offscreen for effect */
-    width: 52%; /* Cover half the width of the hero banner */
+    width: 50%; /* Cover half the width of the hero banner */
 }
 
 /* Text styling in the hero banner */

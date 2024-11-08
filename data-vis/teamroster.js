@@ -21,4 +21,5 @@ async function fetchTeamRoster() {
 }
 
 // Call the async function
-fetchTeamRoster();
+fetchTeamRoster(); 
+
