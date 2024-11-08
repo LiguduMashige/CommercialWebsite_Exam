@@ -2,7 +2,7 @@ const url = 'https://serie-a-league.p.rapidapi.com/news?limit=10';
 const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': 'a875dc5cbemsha6bf1fc010ff196p1844cdjsncadb96e441d7',
+		'x-rapidapi-key': '0285bf0b7dmsh9bdbd21c0386887p163adbjsn3745c6019150',
 		'x-rapidapi-host': 'serie-a-league.p.rapidapi.com'
 	}
 };

@@ -9,6 +9,9 @@
     <link rel= "stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700&display=swap">
     <link rel= "stylesheet" href= "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <script type="module" src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="visuals-css/teamstats.css">
+    <link rel="stylesheet" href="visuals-css/news.css">
 </head>
 <body>
     <div id="header">
@@ -36,24 +39,24 @@
     </main>
 
     <div class="section" id="section1">
-        <img src="https://via.placeholder.com/300" alt="Placeholder Image 1">
-        <p>This is the content for Section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div id="scatter-container">
+            <h2>Goals vs. Assists Scatter Plot</h2>
+            <div id="scatter-plot"></div>
+        </div>
     </div>
     <div class="section" id="section2">
-        <img src="https://via.placeholder.com/300" alt="Placeholder Image 2">
-        <p>This is the content for Section 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
+        <h2>View the Latest Serie A News</h2>
+        <div id="descriptionContainer"></div>
+        <button id="readMoreButton">Read More</button>
     <div class="section" id="section3">
         <img src="https://via.placeholder.com/300" alt="Placeholder Image 3">
         <p>This is the content for Section 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="section" id="section4">
-        <img src="https://via.placeholder.com/300" alt="Placeholder Image 4">
-        <p>This is the content for Section 4. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/reveal.js"></script>
     <script src="scripts/text-scroll.js"></script>
+    <script src="data-vis/statsVis.js"></script>
+    <script src="data-vis/newsView.js"></script>
 </body>
 </html>
