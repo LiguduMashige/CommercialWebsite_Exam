@@ -1,4 +1,4 @@
-#description {
+/* #description {
     margin: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -12,4 +12,41 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+} */
+ /* Container for the description box */
+ #descriptionContainer {
+    width: 750px; /* Increased width */
+    padding: 50px; /* Increased padding */
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-size: 40px; /* Increased font size */
+    color: #333;
+    text-align: center;
+    min-height: 200px; /* Increased min-height */
+    overflow-y: auto;
+}
+
+/* Styling for the "Read More" button */
+#readMoreButton {
+    padding: 20px 50px; /* Increased padding */
+    font-size: 32px; /* Increased font size */
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#readMoreButton:hover {
+    background-color: #0056b3;
+}
+
+#readMoreButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

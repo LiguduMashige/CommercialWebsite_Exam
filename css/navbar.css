@@ -394,3 +394,14 @@ a:hover{
         background-position: -300%;
     }
 }
+#section2 img {
+    width: 50%; /* 50% of its original size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Optional styling for the paragraph */
+#section2 p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}

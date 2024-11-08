@@ -2,7 +2,7 @@ const url = 'https://serie-a-league.p.rapidapi.com/team/perfomance?teamId=110';
 const options = {
     method: 'GET',
     headers: {
-        'x-rapidapi-key': 'a875dc5cbemsha6bf1fc010ff196p1844cdjsncadb96e441d7',
+        'x-rapidapi-key': '93b6fad7b7msh40e888386a49b8ap180d6ajsnac270d0b8ac6',
         'x-rapidapi-host': 'serie-a-league.p.rapidapi.com'
     }
 };
