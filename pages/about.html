@@ -12,8 +12,22 @@
     <div id="header">
         <nav id="navbar"></nav>
     </div> 
-    <div id="chart"></div>
-    <div class="tooltip" id="tooltip" style="opacity: 0;"></div>
+
+    <div id="controls">
+        <button id="split-btn" class="btn">Split</button>
+        <button id="combine-btn" class="btn">Combine</button>
+      </div>
+      
+      <div id="chart-container">
+        <div id="loading-screen">Retrieving data: Loading...</div>
+        <div id="chart"></div>
+        <div class="tooltip" id="tooltip" style="opacity: 0;"></div>
+      </div>
+        
+   <!--<div id="chart-container">
+        <div id="chart"></div>
+        <div class="tooltip" id="tooltip" style="opacity: 0;"></div>
+      </div>-->
 
     <script src="../scripts/app.js"></script>
     <script src="../data-vis/rosterVis.js"></script>
